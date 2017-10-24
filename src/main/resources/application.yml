@@ -1,0 +1,15 @@
+### This file is in Yaml format
+
+server:
+  port: 8090
+
+# Security must be enabled in production
+security:
+  basic:
+    enabled: false
+
+#management endpoints on a separate port
+management:
+  port: 8091
+  security:
+    enabled: false # management port is internal only. no need to secure it.
