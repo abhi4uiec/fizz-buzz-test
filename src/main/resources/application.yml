@@ -1,4 +1,4 @@
-### This file is in Yaml format
+# This file is in Yaml format
 
 server:
   port: 8090

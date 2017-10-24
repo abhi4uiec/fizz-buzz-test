@@ -1,5 +1,8 @@
 package com.test.fizzbuzz.api.docs;
 
+/* Responsible for generating the swagger documentation. It can be accessed using URL
+ * http://localhost:8090/swagger-ui.html
+ */
 import com.google.common.base.Predicates;
 
 import org.springframework.context.annotation.Bean;

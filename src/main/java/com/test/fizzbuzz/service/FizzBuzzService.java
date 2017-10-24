@@ -14,6 +14,7 @@ public class FizzBuzzService {
 		List<Integer> buzzList=fizBuzz.getBuzzList();
 		List<Integer> fizzBuzzList=fizBuzz.getFizzBuzzList();
 		
+		// Using Streams introduced by Java 8
 		IntStream.rangeClosed(1, limit)
 		.mapToObj(i -> i % 3 == 0 ? (i % 5 == 0 ? fizzBuzzList.add(i) : fizzList.add(i)) : (i % 5 == 0 ? buzzList.add(i) : i)).count();
 		
