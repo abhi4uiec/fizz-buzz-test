@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
@@ -34,13 +35,42 @@ public class FizzBuzzControllerTests {
 	}
 
 	@Test
-	public void testFizzBuzzSuccess() throws Exception
+	public void testFizzBuzzBy3() throws Exception
 	{
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/fizzbuzz/"+Mockito.anyInt()).accept(MediaType.APPLICATION_JSON);
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/fizzbuzz/3").accept(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
 		assertEquals(result.getResponse().getStatus(), HttpStatus.OK.value());
+
+		String expected = "{\"fizzList\":[3],\"buzzList\":[],\"fizzBuzzList\":[]}";
+		JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
+	}
+
+	@Test
+	public void testFizzBuzzBy5() throws Exception
+	{
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/fizzbuzz/5").accept(MediaType.APPLICATION_JSON);
+
+		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+
+		assertEquals(result.getResponse().getStatus(), HttpStatus.OK.value());
+
+		String expected = "{\"fizzList\":[3],\"buzzList\":[5],\"fizzBuzzList\":[]}";
+		JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
+	}
+
+	@Test
+	public void testFizzBuzzBy15() throws Exception
+	{
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/fizzbuzz/15").accept(MediaType.APPLICATION_JSON);
+
+		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+
+		assertEquals(result.getResponse().getStatus(), HttpStatus.OK.value());
+
+		String expected = "{\"fizzList\":[3,6,9,12],\"buzzList\":[5,10],\"fizzBuzzList\":[15]}";
+		JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
 	}
 
 	@Test
