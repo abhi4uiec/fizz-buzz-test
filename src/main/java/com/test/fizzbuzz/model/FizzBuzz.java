@@ -1,52 +1,51 @@
 package com.test.fizzbuzz.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 public class FizzBuzz {
 
-	private List<Integer> fizzList;
+	private LinkedList<Integer> fizzList;
 
-	private List<Integer> buzzList;
+	private LinkedList<Integer> buzzList;
 
-	private List<Integer> fizzBuzzList;
+	private LinkedList<Integer> fizzBuzzList;
 
 	public FizzBuzz() 
 	{
-		fizzList=new ArrayList<Integer>();
-		buzzList=new ArrayList<Integer>();
-		fizzBuzzList=new ArrayList<Integer>();
+		fizzList=new LinkedList<Integer>();
+		buzzList=new LinkedList<Integer>();
+		fizzBuzzList=new LinkedList<Integer>();
 	}
 
-	public FizzBuzz(List<Integer> fizzList, List<Integer> buzzList, List<Integer> fizzBuzzList) {
+	public FizzBuzz(LinkedList<Integer> fizzList, LinkedList<Integer> buzzList, LinkedList<Integer> fizzBuzzList) {
 		super();
 		this.fizzList = fizzList;
 		this.buzzList = buzzList;
 		this.fizzBuzzList = fizzBuzzList;
 	}
 
-	public List<Integer> getFizzList() 
+	public LinkedList<Integer> getFizzList() 
 	{
 		return fizzList;
 	}
 
-	public List<Integer> getBuzzList() {
+	public LinkedList<Integer> getBuzzList() {
 		return buzzList;
 	}
 
-	public List<Integer> getFizzBuzzList() {
+	public LinkedList<Integer> getFizzBuzzList() {
 		return fizzBuzzList;
 	}
 
-	public void setFizzList(List<Integer> fizzList) {
+	public void setFizzList(LinkedList<Integer> fizzList) {
 		this.fizzList = fizzList;
 	}
 
-	public void setBuzzList(List<Integer> buzzList) {
+	public void setBuzzList(LinkedList<Integer> buzzList) {
 		this.buzzList = buzzList;
 	}
 
-	public void setFizzBuzzList(List<Integer> fizzBuzzList) {
+	public void setFizzBuzzList(LinkedList<Integer> fizzBuzzList) {
 		this.fizzBuzzList = fizzBuzzList;
 	}
 

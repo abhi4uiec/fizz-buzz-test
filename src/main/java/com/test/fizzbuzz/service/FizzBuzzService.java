@@ -1,6 +1,6 @@
 package com.test.fizzbuzz.service;
 
-import java.util.List;
+import java.util.LinkedList;
 import java.util.stream.IntStream;
 import org.springframework.stereotype.Service;
 import com.test.fizzbuzz.model.FizzBuzz;
@@ -10,9 +10,9 @@ public class FizzBuzzService {
 
 	public FizzBuzz getFizzBuzzGroup(Integer limit) {		
 		FizzBuzz fizBuzz=new FizzBuzz();
-		List<Integer> fizzList = fizBuzz.getFizzList();
-		List<Integer> buzzList=fizBuzz.getBuzzList();
-		List<Integer> fizzBuzzList=fizBuzz.getFizzBuzzList();
+		LinkedList<Integer> fizzList = fizBuzz.getFizzList();
+		LinkedList<Integer> buzzList=fizBuzz.getBuzzList();
+		LinkedList<Integer> fizzBuzzList=fizBuzz.getFizzBuzzList();
 		
 		// Using Streams introduced by Java 8
 		IntStream.rangeClosed(1, limit)
